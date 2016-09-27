@@ -14,7 +14,7 @@ class Laser
   public:
     Laser(void);
 
-    bool begin(Stream *serialPort = &Serial); //If user doesn't specificy then Serial will be used
+    bool begin(Stream &serialPort = Serial); //If user doesn't specificy then Serial will be used
     
     void sendCommand(String command);
 

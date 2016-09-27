@@ -15,9 +15,9 @@ Memory::Memory()
 }
 
 //Initialize the I2C port
-bool Memory::begin(TwoWire *wirePort)
+bool Memory::begin(TwoWire &wirePort)
 {
-  _i2cPort = wirePort; //Grab which port the user wants us to use
+  _i2cPort = &wirePort; //Grab which port the user wants us to use
   
   _i2cPort->begin();
 }

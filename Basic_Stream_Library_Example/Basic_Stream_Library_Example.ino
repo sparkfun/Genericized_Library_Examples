@@ -34,17 +34,17 @@ void setup()
   //Uncomment the following block for testing with normal Serial port on Uno
   Serial.begin(9600); //We have to start the serial port before we call begin()
   myLaser.begin(); //With an empty call this will default to Serial.print, Serial.read, etc
-  //myLaser.begin(&Serial); //Passing &Serial does the same: this will use Serial.print, Serial.read, etc
+  //myLaser.begin(Serial); //Passing &Serial does the same: this will use Serial.print, Serial.read, etc
 
   //Uncomment the following block for testing on SAMD21
   //SerialUSB.begin(9600); //For printing local debug messages
   //laserSerial2.begin(9600); //We have to start the serial port before we call begin()
-  //myLaser.begin(&laserSerial2); //This will use the 2nd hardware serial port on the SAMD21 Mini
+  //myLaser.begin(laserSerial2); //This will use the 2nd hardware serial port on the SAMD21 Mini
 
   //Uncomment the following block for testing with software serial on an Uno
   //Serial.begin(9600); //For printing local debug messages
   //mySerial.begin(9600); //We have to start the serial port before we call begin()
-  //myLaser.begin(&mySerial); //This will use the SoftwareSerial library
+  //myLaser.begin(mySerial); //This will use the SoftwareSerial library
 }
 
 void loop()

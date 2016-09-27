@@ -15,9 +15,9 @@ Laser::Laser(void)
 }
 
 //Initialize the Serial port
-bool Laser::begin(Stream *serialPort)
+bool Laser::begin(Stream &serialPort)
 {
-  _laserSerial = serialPort; //Grab which port the user wants us to use
+  _laserSerial = &serialPort; //Grab which port the user wants us to use
 
  //_laserSerial->begin(); //Stream has no .begin() so the user has to do a whateverSerial.begin(xxxx); from setup()
 }

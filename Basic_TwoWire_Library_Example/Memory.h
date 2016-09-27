@@ -16,7 +16,7 @@ class Memory
  public: 
   Memory(void);
 
-  bool begin(TwoWire *wirePort = &Wire); //If user doesn't specificy then Wire will be used
+  bool begin(TwoWire &wirePort = Wire); //If user doesn't specificy then Wire will be used
 
   void writeValue(uint16_t place, uint8_t thing);
   uint8_t readValue(uint16_t place);

@@ -24,25 +24,16 @@ Memory myStorage;
 //#include <Wire.h>
 //TwoWire secondI2C(&sercom1, 11, 13); //SDA = 11, SCL = 13
 
-//Uncomment the following block for testing with software I2C on an Uno
-//#include <SoftwareWire.h>
-//SoftwareWire myWire(2, 3); //SDA = 2, SCL = 3
-
 void setup()
 {
   //Uncomment the following block for testing with normal I2C port on Uno
   Serial.begin(9600); //For printing local debug messages
   myStorage.begin(); //Uno - With an empty call this will default to Wire.read, Wire.write, etc
-  //myStorage.begin(&Wire); //Uno - This will use Wire.read, Wire.write, etc
+  //myStorage.begin(Wire); //Uno - This will use Wire.read, Wire.write, etc
 
   //Uncomment the following block for testing on SAMD21
   //SerialUSB.begin(9600); //For printing local debug messages
-  //myStorage.begin(&secondI2C); //SAMD21 - This will use the 2nd hardware I2C port on the SAMD21 Mini
-
-  //Uncomment the following block for testing with software I2C on an Uno
-  //Serial.begin(9600); //For printing local debug messages
-  //myWire.begin();
-  //myStorage.begin(&myWire); //This will use the software based I2C library
+  //myStorage.begin(secondI2C); //SAMD21 - This will use the 2nd hardware I2C port on the SAMD21 Mini
 }
 
 void loop()
